@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>뒤죽박죽 타자 테스트</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div class="fixed top-5 right-5 z-50">
+    <button id="menuButton" class="flex flex-col gap-2 w-8 group">
+      <div class="rounded-2xl h-[3px] w-1/2 bg-black duration-500 group-[.active]:rotate-[225deg] group-[.active]:origin-right group-[.active]:-translate-x-[12px] group-[.active]:-translate-y-[1px]"></div>
+      <div class="rounded-2xl h-[3px] w-full bg-black duration-500 group-[.active]:-rotate-45"></div>
+      <div class="rounded-2xl h-[3px] w-1/2 bg-black duration-500 place-self-end group-[.active]:rotate-[225deg] group-[.active]:origin-left group-[.active]:translate-x-[12px] group-[.active]:translate-y-[1px]"></div>
+    </button>
+    <div class="menu" id="menu">
+      <a href="index.html" class="menu-item">메인으로</a>
+    
+      <div class="dark-mode-toggle" id="darkModeToggle">
+        <svg id="modeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 지ㅡ9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <span id="modeText">다크 모드</span>
+      </div>
+    </div>
+  </div>
+  <img src="../img/dy2.png" alt="School" class="school-logo" />
+  <img src="../img/dy3.png" alt="dy3" class="dy3-logo" />
+
+  <div class="stats-container">
+    <div class="stat-item">
+      <span class="stat-label">CPM</span>
+      <span id="wpm" class="stat-value">0</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-label">정확도</span>
+      <span id="accuracy" class="stat-value">0%</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-label">경과 시간</span>
+      <span id="time" class="stat-value">0초</span>
+    </div>
+  </div>
+
+  <div class="result-container">
+    <div class="result" id="reversedText">  </div>
+  </div>
+
+  <div class="form-wrapper">
+    <div class="form-control">
+      <input type="text" required id="textInput" readonly>
+      <label></label>
+    </div>
+  </div>
+
+  <div class="keyboard" id="keyboardContainer"></div>
+
+  <div id="resultPopup" class="result-popup">
+    <div class="result-content">
+      <h2>타자 연습 결과</h2>
+      <div class="result-stats">
+        <div class="result-stat-item">
+          <span class="result-stat-label">CPM</span>
+          <span id="resultWpm" class="result-stat-value">0</span>
+        </div>
+        <div class="result-stat-item">
+          <span class="result-stat-label">정확도</span>
+          <span id="resultAccuracy" class="result-stat-value">0%</span>
+        </div>
+        <div class="result-stat-item">
+          <span class="result-stat-label">경과 시간</span>
+          <span id="resultTime" class="result-stat-value">0초</span>
+        </div>
+      </div>
+      <button id="closeResult" class="close-button">메인화면</button>
+    </div>
+  </div>
+  
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+  
+  <script src="../scripts.js"></script>
+</body>
+</html>
+
+<style>
+/* Remove test button styles */
+</style>
+
